@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add a New App</title>
+  </head>
+  <body>
+    <%- include('../partials/_navbar.ejs') %>
+    <h1>Add a New Menu item</h1>
+
+    <form action="/users/<%= user._id %>/foods" method="POST">
+      <label for="Dish">Dish:</label>
+      <input type="text" name="Dish" id="Dish" required/>
+
+      <label for="Description">Description:</label>
+      <textarea name="Description" id="Description"></textarea>
+
+      <label for="status">availability:</label>
+      <select id="status" name="status">
+        <option value="available">available</option>
+        <option value="not in stock">not in stock</option>
+        <option value="limited quantity">limited quantity</option>
+      </select>
+
+      <button type="submit">Add menu item</button>
+    </form>
+
+  </body>
+</html>
